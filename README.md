@@ -1,9 +1,9 @@
 # Follwing steps to be followed to complete the Robot Setup#
 
-Step1- Install Paython 2.8 or above
-Step2- pip install robotframework
-Step3- pip install robotframework-seleniumlibrary
-step4- Set environmental variable for Python
+	Step1:	 Install Paython 2.8 or above
+	Step2:	 pip install robotframework
+	Step3:	 pip install robotframework-seleniumlibrary
+	step4:	 Set environmental variable for Python
 
 
 #####Download eclipse If the scripts need to be run from Eclipse or for editing ############
