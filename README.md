@@ -34,8 +34,9 @@ Path for python should be shown
 ###########################################################################################################
 Execute the test file
 ###########################################################################################################
-Open Command prompt
-go to the path where the file is kept
+Step1-Open Command prompt
+Step2-npm start(to get the site up and running)
+Step3-cd <Path of the Robot frame project>
 execute the test using following command
-robot Test-assignement.robot
+Step4-robot Test-assignement.robot
 
