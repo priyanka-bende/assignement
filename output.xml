@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generated="20201101 21:36:57.978" generator="Robot 3.1.2 (Python 2.7.18 on win32)">
+<suite source="C:\Users\priya\eclipse-workspace\Ardoq-Shoppingcart\Test-assignement.robot" id="s1" name="Test-assignement">
+<test id="s1-t1" name="TC01:Validate whether the products can be sorted Lowest to Highest and assert the price of first product is kr 9.000">
+<kw name="open browser" library="Test-assignement">
+<doc>This keyword is to open the browser and open the page Webpage</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20201101 21:37:03.508" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000/'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20201101 21:37:22.769" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20201101 21:37:22.770" starttime="20201101 21:37:22.237"></status>
+</kw>
+<msg timestamp="20201101 21:37:22.774" level="FAIL">WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED
+  (Session info: chrome=86.0.4240.111)
+</msg>
+<status status="FAIL" endtime="20201101 21:37:22.775" starttime="20201101 21:37:03.508"></status>
+</kw>
+<status status="FAIL" endtime="20201101 21:37:22.775" starttime="20201101 21:37:03.507"></status>
+</kw>
+<status status="FAIL" endtime="20201101 21:37:22.776" critical="yes" starttime="20201101 21:37:03.504">WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED
+  (Session info: chrome=86.0.4240.111)
+</status>
+</test>
+<test id="s1-t2" name="TC02:Validate whether the products can be sorted Highest to Lowest and assert the price of first product is kr134.900">
+<kw name="open browser" library="Test-assignement">
+<doc>This keyword is to open the browser and open the page Webpage</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20201101 21:37:22.801" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000/'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20201101 21:37:35.362" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20201101 21:37:35.363" starttime="20201101 21:37:34.942"></status>
+</kw>
+<msg timestamp="20201101 21:37:35.364" level="FAIL">WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED
+  (Session info: chrome=86.0.4240.111)
+</msg>
+<status status="FAIL" endtime="20201101 21:37:35.364" starttime="20201101 21:37:22.800"></status>
+</kw>
+<status status="FAIL" endtime="20201101 21:37:35.364" starttime="20201101 21:37:22.799"></status>
+</kw>
+<status status="FAIL" endtime="20201101 21:37:35.365" critical="yes" starttime="20201101 21:37:22.798">WebDriverException: Message: unknown error: net::ERR_CONNECTION_REFUSED
+  (Session info: chrome=86.0.4240.111)
+</status>
+</test>
+<test id="s1-t3" name="TC03:Validate whether the products can be filtered by selecting Size S and assert the combined price of items is kr 33.400">
+<kw name="open browser" library="Test-assignement">
+<doc>This keyword is to open the browser and open the page Webpage</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20201101 21:37:35.371" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000/'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20201101 21:37:58.623" level="FAIL">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=86.0.4240.111)
+</msg>
+<status status="FAIL" endtime="20201101 21:37:58.623" starttime="20201101 21:37:46.485"></status>
+</kw>
+<msg timestamp="20201101 21:37:58.623" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: chrome not reachable
+  (Session info: chrome=86.0.4240.111)
+</msg>
+<msg timestamp="20201101 21:37:58.630" level="FAIL">WebDriverException: Message: unknown error: cannot determine loading status
+from disconnected: received Inspector.detached event
+  (Session info: chrome=86.0.4240.111)
+</msg>
+<status status="FAIL" endtime="20201101 21:37:58.630" starttime="20201101 21:37:35.370"></status>
+</kw>
+<status status="FAIL" endtime="20201101 21:37:58.631" starttime="20201101 21:37:35.369"></status>
+</kw>
+<status status="FAIL" endtime="20201101 21:37:58.632" critical="yes" starttime="20201101 21:37:35.367">WebDriverException: Message: unknown error: cannot determine loading status
+from disconnected: received Inspector.detached event
+  (Session info: chrome=86.0.4240.111)
+</status>
+</test>
+<test id="s1-t4" name="TC04:Select only the products which have installments and assert the total number of products is 15">
+<kw name="open browser" library="Test-assignement">
+<doc>This keyword is to open the browser and open the page Webpage</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20201101 21:37:58.648" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000/'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20201101 21:38:16.933" level="FAIL">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=86.0.4240.111)
+</msg>
+<status status="FAIL" endtime="20201101 21:38:16.934" starttime="20201101 21:38:04.899"></status>
+</kw>
+<msg timestamp="20201101 21:38:16.934" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: chrome not reachable
+  (Session info: chrome=86.0.4240.111)
+</msg>
+<msg timestamp="20201101 21:38:16.938" level="FAIL">WebDriverException: Message: unknown error: cannot determine loading status
+from disconnected: received Inspector.detached event
+  (Session info: chrome=86.0.4240.111)
+</msg>
+<status status="FAIL" endtime="20201101 21:38:16.938" starttime="20201101 21:37:58.647"></status>
+</kw>
+<status status="FAIL" endtime="20201101 21:38:16.939" starttime="20201101 21:37:58.646"></status>
+</kw>
+<status status="FAIL" endtime="20201101 21:38:16.939" critical="yes" starttime="20201101 21:37:58.642">WebDriverException: Message: unknown error: cannot determine loading status
+from disconnected: received Inspector.detached event
+  (Session info: chrome=86.0.4240.111)
+</status>
+</test>
+<test id="s1-t5" name="TC05:Without selecting any product, go to cart and click on Checkout. Assert the text in Alert box is &quot;Add some product in the cart!&quot;">
+<kw name="open browser" library="Test-assignement">
+<doc>This keyword is to open the browser and open the page Webpage</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20201101 21:38:16.948" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000/'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20201101 21:38:35.873" level="FAIL">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=86.0.4240.111)
+</msg>
+<status status="FAIL" endtime="20201101 21:38:35.874" starttime="20201101 21:38:23.833"></status>
+</kw>
+<msg timestamp="20201101 21:38:35.874" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: chrome not reachable
+  (Session info: chrome=86.0.4240.111)
+</msg>
+<msg timestamp="20201101 21:38:35.878" level="FAIL">WebDriverException: Message: unknown error: cannot determine loading status
+from disconnected: received Inspector.detached event
+  (Session info: chrome=86.0.4240.111)
+</msg>
+<status status="FAIL" endtime="20201101 21:38:35.878" starttime="20201101 21:38:16.947"></status>
+</kw>
+<status status="FAIL" endtime="20201101 21:38:35.878" starttime="20201101 21:38:16.947"></status>
+</kw>
+<status status="FAIL" endtime="20201101 21:38:35.879" critical="yes" starttime="20201101 21:38:16.943">WebDriverException: Message: unknown error: cannot determine loading status
+from disconnected: received Inspector.detached event
+  (Session info: chrome=86.0.4240.111)
+</status>
+</test>
+<test id="s1-t6" name="TC06:Select &quot;Sphynx Tie Dye Wine T-Shirt&quot;, go to checkout and handel the alerts">
+<kw name="open browser" library="Test-assignement">
+<doc>This keyword is to open the browser and open the page Webpage</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20201101 21:38:35.888" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000/'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20201101 21:38:59.158" level="FAIL">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=86.0.4240.111)
+</msg>
+<status status="FAIL" endtime="20201101 21:38:59.158" starttime="20201101 21:38:47.105"></status>
+</kw>
+<msg timestamp="20201101 21:38:59.158" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: chrome not reachable
+  (Session info: chrome=86.0.4240.111)
+</msg>
+<msg timestamp="20201101 21:38:59.162" level="FAIL">WebDriverException: Message: unknown error: cannot determine loading status
+from disconnected: received Inspector.detached event
+  (Session info: chrome=86.0.4240.111)
+</msg>
+<status status="FAIL" endtime="20201101 21:38:59.162" starttime="20201101 21:38:35.888"></status>
+</kw>
+<status status="FAIL" endtime="20201101 21:38:59.162" starttime="20201101 21:38:35.887"></status>
+</kw>
+<status status="FAIL" endtime="20201101 21:38:59.163" critical="yes" starttime="20201101 21:38:35.885">WebDriverException: Message: unknown error: cannot determine loading status
+from disconnected: received Inspector.detached event
+  (Session info: chrome=86.0.4240.111)
+</status>
+</test>
+<status status="FAIL" endtime="20201101 21:38:59.167" starttime="20201101 21:36:57.983"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="6" pass="0">Critical Tests</stat>
+<stat fail="6" pass="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="6" id="s1" name="Test-assignement" pass="0">Test-assignement</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20201101 21:36:58.396" level="WARN">Error in file 'C:\Users\priya\eclipse-workspace\Ardoq-Shoppingcart\Test-assignement.resource': Escaping empty cells with '\' before line continuation marker '...' is deprecated. Remove escaping before Robot Framework 3.2.</msg>
+<msg timestamp="20201101 21:36:58.402" level="WARN">Error in file 'C:\Users\priya\eclipse-workspace\Ardoq-Shoppingcart\Test-assignement.resource': Escaping empty cells with '\' before line continuation marker '...' is deprecated. Remove escaping before Robot Framework 3.2.</msg>
+<msg timestamp="20201101 21:37:58.623" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: chrome not reachable
+  (Session info: chrome=86.0.4240.111)
+</msg>
+<msg timestamp="20201101 21:38:16.934" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: chrome not reachable
+  (Session info: chrome=86.0.4240.111)
+</msg>
+<msg timestamp="20201101 21:38:35.874" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: chrome not reachable
+  (Session info: chrome=86.0.4240.111)
+</msg>
+<msg timestamp="20201101 21:38:59.158" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: chrome not reachable
+  (Session info: chrome=86.0.4240.111)
+</msg>
+</errors>
+</robot>
