@@ -5,23 +5,7 @@ Resource    Config.resource
    
 
 *** Test Cases ***
-# TC:Select the size
-     # Test-assignement.open browser
-    # @{sizes}    SeleniumLibrary.Get WebElements    ${Size}     
-    # ${count_size}    SeleniumLibrary.Get Element Count    ${Size}
-    # ${i}    BuiltIn.Set Variable    0  
-    # :FOR    ${item}    IN    @{sizes}
-    # \    ${i}    BuiltIn.Evaluate    ${i}+1        
-    # \    ${size_page}    SeleniumLibrary.Get Text     ${item} 
-    # \    ${required_Size}    BuiltIn.Run Keyword If    '${size_page}'=='${Expected_size}'    BuiltIn.Set Variable    ${Expected_size}
-    # \    ${Size_Element}=    BuiltIn.Run Keyword If    '${size_page}'=='${Expected_size}'    BuiltIn.Set Variable    ${item}  
-    # \    BuiltIn.Exit For Loop If    '${size_page}'=='${Expected_size}'
-    # \    ${not_available}    BuiltIn.Run Keyword If    ${i}==${count_size}   BuiltIn.Set Variable    TRUE
-    # \    BuiltIn.Run Keyword If    '${not_available}'=='TRUE'    BuiltIn.Log To Console    NO data found matching to expected size             
-    # \    BuiltIn.Exit For Loop If    '${not_available}'=='TRUE' 
-     
-    # BuiltIn.Log To Console    ${required_Size}            
-     # SeleniumLibrary.Close Browser
+
     
 TC01:Validate whether the products can be sorted Lowest to Highest and assert the price of first product is kr 9.000
     Test-assignement.open browser
@@ -80,7 +64,7 @@ TC05:Without selecting any product, go to cart and click on Checkout. Assert the
     Test-assignement.open browser
     ${alert_message}    Test-assignement.Go to Cart and checkout
     SeleniumLibrary.Close Browser
-    ${alert_message_result}    BuiltIn.Run Keyword And Ignore Error    BuiltIn.Should Be Equal    ${alert_message}[0]    Add some product in the cart!
+    ${alert_message_result}    BuiltIn.Run Keyword And Ignore Error    BuiltIn.Should Be Equal    ${alert_message}[0]    ${alert_message}
     BuiltIn.Run Keyword If    '${alert_message_result}[0]'=='FAIL'    BuiltIn.Fail    Alert message is mismatched${alert_message_result}[1]    
     ...    ELSE    BuiltIn.Log To Console    Alert message is matched  
 
