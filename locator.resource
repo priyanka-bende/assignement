@@ -13,8 +13,11 @@ ${small_size_item}    //*[@id="root"]//div[@class="shelf-item__thumb"]/img
 ${ele_wine_shirt}    //*[@id="root"]//img[@alt="Sphynx Tie Dye Wine T-Shirt"]
 ${ele_price_item_in_cart}    //*[@id="root"]//div[@class="shelf-item__price"]/p
 ${empty_cart_msg}    //*[@id="root"]//p[@class="shelf-empty"]
-
+${first_item_price}    //*[@id="root"]//div[@class="val"]
+${Size_text}    //*[@id="root"]//h4[text()="Sizes:"]
+${Ele_Shirt_to_be_selected}    //*[@id="root"]//div[*]/p
 ${Size}    //*[@id="root"]//span
+${sorting_drop_down}    //*[@id="root"]//option
 
 
 

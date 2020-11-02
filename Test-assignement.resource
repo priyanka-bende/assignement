@@ -100,6 +100,7 @@ Select size on the page
 
 verify size is only S
     [Arguments]    ${prod_list}
+    [Documentation]    This keyword is to verify if the Size of the item is matching with expected size
     
     ${size_len}    BuiltIn.Get Length    ${prod_list}
     :FOR    ${i}    IN RANGE    ${size_len} 
@@ -111,6 +112,7 @@ verify size is only S
     \    ...    ELSE    BuiltIn.Log To Console    Size matches with the expected Size    
 
 get price for item in Cart
+    [Documentation]    This keyword is to fetch the price of all the items which are added into cart
     
 
     @{items_for_price}    SeleniumLibrary.Get WebElements    ${ele_price_item_in_cart}
@@ -126,6 +128,7 @@ get price for item in Cart
     [Return]    ${sum_price}      
                       
 get total price
+    [Documentation]    This keyword is to fetch the Total price of all the items from cart
  
     ${Status}=     Run Keyword And Return Status    SeleniumLibrary.Element Should Be Visible    ${Cart_button}   
     BuiltIn.Run Keyword If    '${Status}'=='False'    SeleniumLibrary.Click Element    ${close_button}    
@@ -133,12 +136,13 @@ get total price
     SeleniumLibrary.Wait Until Element Is Visible    ${Sub_total}      
          
     ${sub_tot_page}    SeleniumLibrary.Get Text    ${Sub_total}
-     BuiltIn.Log To Console    ${sub_tot_page}
+     #BuiltIn.Log To Console    ${sub_tot_page}
      SeleniumLibrary.Click Element    ${close_button}    
     [Return]    ${sub_tot_page}        
 
 
 get product information from cart
+    [Documentation]    This keyword is to get the information of the Product from the cart
     
         @{product_detail}     SeleniumLibrary.Get WebElements   //*[@id="root"]//p[@class="desc"]
 
@@ -160,6 +164,7 @@ get product information from cart
 
 
 Click on sort low to high price
+    [Documentation]    This button is to cilck sorting from low to high
     
          
     SeleniumLibrary.Wait Until Element Is Enabled    ${cart_element}         
@@ -168,16 +173,17 @@ Click on sort low to high price
     ${sorted_list}   get all price on home page
     [Return]    ${sorted_list}  
 get first element on the screen
+   [Documentation]    This keyword is to get the price for the first element
     
-     @{elList} =     SeleniumLibrary.Get WebElements    xpath=//*[@id="root"]//div[@class="val"]
-     ${price}    SeleniumLibrary.Get Text    xpath=//*[@id="root"]//div[@class="val"]    
-     BuiltIn.Log To Console     ${price}
+     @{elList} =     SeleniumLibrary.Get WebElements    xpath=${first_item_price}
+     ${price}    SeleniumLibrary.Get Text    xpath=${first_item_price}    
+     #BuiltIn.Log To Console     ${price}
      [Return]    ${price}        
      
 
     
-Test-assignement.Click on sort high to low price
-    
+Click on sort high to low price
+    [Documentation]    This keyword is to sort the itmes from high to low
           
     SeleniumLibrary.Wait Until Element Is Enabled    ${cart_element}         
     SeleniumLibrary.Click Element    ${high_price_dropdown} 
@@ -187,17 +193,18 @@ Test-assignement.Click on sort high to low price
  
 
 check no of product with installments
-    
+    [Documentation]    This keyword is to check the no of itments with installation option
     ${no_prod}         get installment count
     ${no_prod}    BuiltIn.Convert To String    ${no_prod}
     [Return]    ${no_prod}     
     
 Go to Cart and checkout
+    [Documentation]    This keyword is to go to the cart and click on the checkout 
     
     
     ${message_list}    BuiltIn.Create List    
-    SeleniumLibrary.Wait Until Element Is Enabled    ${Cart_button}
-    BuiltIn.Sleep   2              
+    SeleniumLibrary.Wait Until Element Is Enabled    ${Size_text}
+    BuiltIn.Sleep   3             
     
    
     
@@ -207,13 +214,14 @@ Go to Cart and checkout
     #...    ELSE    get sub total from cart and compare
     SeleniumLibrary.Click Element    ${ele_btn_checkout}
     
-    :FOR    ${i}    IN RANGE    ${counter}
+    :FOR    ${i}    IN RANGE    ${counter}  
     \    ${message}      SeleniumLibrary.Handle Alert    action=ACCEPT 
     \    Collections.Append To List     ${message_list}    ${message}  
                    
       
     [Return]    ${message_list}     
 get sub total from cart and compare
+    [Documentation]    This keyword is to get the subtotal of the prices available in the cart and compare it
     
       SeleniumLibrary.Click Element    ${Cart_button}
       sleep    2
@@ -233,11 +241,32 @@ get sub total from cart and compare
     # ${message}    BuiltIn.Run Keyword If    '${alert_status}[0]'=='PASS'    BuiltIn.Log To Console    Alert is handeled           
     # ...    ELSE    BuiltIn.Fail    No alert is generated     
 Element Exists
-    [Documentation]  Determines if the desired element exists
+    [Documentation]  This keyword is to Determine if the desired element exists
     [Arguments]  ${xpath}
     ${imageCount} =  Get Matching Xpath Count  ${xpath}
     ${imageExists} =  Evaluate  ${imageCount} > 0
     [Return]  ${imageExists} 
     
 add wine t-shrit
-    Add size to cart    ${ele_wine_shirt}            
+    [Documentation]    This keyword is to add the Wine T-shirt into cart
+    ...    
+    @{elemt}    SeleniumLibrary.Get WebElements    ${Ele_Shirt_to_be_selected}
+    ${count_item}    SeleniumLibrary.Get Element Count    ${Ele_Shirt_to_be_selected}
+    ${i}    BuiltIn.Set Variable    0
+    :FOR    ${item}    IN    @{elemt} 
+    \    ${i}    BuiltIn.Evaluate    ${i}+1    
+    \    ${value}    SeleniumLibrary.Get Text    ${item}
+    \    BuiltIn.Run Keyword If    '${value}'=='${Expected_item_tobe_added}'    SeleniumLibrary.Click Element   ${item}
+    \    BuiltIn.Exit For Loop If    '${value}'=='${Expected_item_tobe_added}'
+     \    ${not_available}    BuiltIn.Run Keyword If    ${i}==${count_item}   BuiltIn.Set Variable    TRUE
+    \    BuiltIn.Run Keyword If    '${not_available}'=='TRUE'    BuiltIn.Log To Console    NO data found matching to expected size             
+    \    BuiltIn.Exit For Loop If    '${not_available}'=='TRUE'
+    BuiltIn.Sleep    1    
+    ${status}     Element Exists     ${close_button}
+    BuiltIn.Run Keyword If    '${status}'=='True'    SeleniumLibrary.Click Element    ${close_button}        
+   # ...    ELSE        SeleniumLibrary.Click Element    ${Cart_button}       
+            
+    # sleep    1  # Add size to cart    ${ele_wine_shirt}
+    #SeleniumLibrary.Click Element    ${close_button}    
+    
+        
