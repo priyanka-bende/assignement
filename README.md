@@ -9,9 +9,9 @@
 ###########################################################################################################
 Execute the test file
 ###########################################################################################################
-	Step1-Open Command prompt
-	Step2-npm start(to get the site up and running)
-	Step3-cd <Path of the Robotframework project>
+	Step1:	Open Command prompt
+	Step2:	npm start(to get the site up and running)
+	Step3:	cd <Path of the Robotframework project>
 *Execute the testsuit file with following command*
-	Step4-   robot Test-assignement.robot
+	Step4:   robot Test-assignement.robot
 
